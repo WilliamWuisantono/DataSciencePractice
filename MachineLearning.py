@@ -39,3 +39,29 @@ y_pred = model.predict(X_test)
 print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
 print(classification_report(y_test, y_pred))
 
+#Evaluation
+
+#Evaluation Method 1
+
+# Confusion Matrix
+cm = confusion_matrix(y_test, y_pred)
+print("Confusion Matrix:")
+print(cm)
+
+# Plotting the confusion matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Not High', 'High'], yticklabels=['Not High', 'High'])
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
+plt.title('Confusion Matrix')
+plt.show()
+
+from sklearn.model_selection import cross_val_score
+
+#Evaluation Method 2
+
+# Cross-validation
+cv_scores = cross_val_score(model, X, y, cv=5)  # 5-fold cross-validation
+print(f"Cross-validation scores: {cv_scores}")
+print(f"Mean CV Score: {np.mean(cv_scores)}")
+
