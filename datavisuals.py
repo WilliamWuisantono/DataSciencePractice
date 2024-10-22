@@ -1,17 +1,24 @@
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load the dataset
 df = pd.read_csv("cereal.csv")
 
-# Sort the dataset by 'sugars' and select the top 10 cereals
-top_sugar_cereals = df.sort_values('sugars', ascending=False).head(10)
+# Select the top 10 cereals by sugar content
+top_sugar_cereals = df.nlargest(10, 'sugars')
 
-# Create a bar plot
+# Set the style for the plot using seaborn
+sns.set_style('whitegrid')
+
+# Create a horizontal bar plot
 plt.figure(figsize=(10, 6))
-plt.bar(top_sugar_cereals['name'], top_sugar_cereals['sugars'], color='orange')
-plt.xlabel('Cereal Name')
-plt.ylabel('Sugar Content')
+sns.barplot(x='sugars', y='name', data=top_sugar_cereals, palette='Oranges_r')
+
+# Set plot labels and title
+plt.xlabel('Sugar Content')
+plt.ylabel('Cereal Name')
 plt.title('Top 10 Cereals by Sugar Content')
-plt.xticks(rotation=45, ha='right')
+
+# Show the plot
 plt.show()
