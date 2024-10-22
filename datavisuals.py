@@ -22,3 +22,10 @@ plt.title('Top 7 Cereals by Sugar Content')
 
 # Show the plot
 plt.show()
+
+# Frequency of Manufacturer in Dataset
+plt.figure(figsize=(10, 6))
+df['mfr'].value_counts().plot.pie(autopct='%1.1f%%', colors=sns.color_palette('pastel'))
+plt.title('Manufacturer Distribution')
+plt.ylabel('')
+plt.show()
