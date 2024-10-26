@@ -31,7 +31,6 @@ plt.ylabel('')
 plt.show()
 
 # Calories vs Rating Scatter Plot
-
 plt.figure(figsize=(8, 6)) 
 sns.scatterplot(data=df, x='calories', y='rating', hue='type', palette='viridis', s=100) 
 plt.title("Calories vs. Rating of Cereals")
