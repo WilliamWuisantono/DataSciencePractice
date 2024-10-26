@@ -29,3 +29,13 @@ df['mfr'].value_counts().plot.pie(autopct='%1.1f%%', colors=sns.color_palette('p
 plt.title('Manufacturer Distribution')
 plt.ylabel('')
 plt.show()
+
+# Calories vs Rating Scatter Plot
+
+plt.figure(figsize=(8, 6)) 
+sns.scatterplot(data=df, x='calories', y='rating', hue='type', palette='viridis', s=100) 
+plt.title("Calories vs. Rating of Cereals")
+plt.xlabel("Calories") 
+plt.ylabel("Rating") 
+plt.legend(title="Type") 
+plt.show()
