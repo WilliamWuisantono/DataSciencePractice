@@ -23,6 +23,7 @@ def preprocess_data():
     df['mfr'] = df['mfr'].astype('category')
     df['type'] = df['type'].astype('category')
 
-    # Create a binary target variable 'high_rating' based on the rating column
+    # 3. Create a binary target variable 'high_rating' based on the rating column
     df['high_rating'] = df['rating'].apply(lambda x: 1 if x > 50 else 0)
+
     return(df)
