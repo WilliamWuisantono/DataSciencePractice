@@ -1,9 +1,10 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import Data_Preprocessing
 
 # Load the dataset
-df = pd.read_csv("cereal.csv")
+df = Data_Preprocessing.preprocess_data()
 
 # Select the top 7 cereals by sugar content
 top_sugar_cereals = df.nlargest(7, 'sugars')
