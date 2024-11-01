@@ -31,12 +31,7 @@ plt.title('Manufacturer Distribution')
 plt.ylabel('')
 plt.show()
 
-<<<<<<< Updated upstream
 # Calories vs Rating Scatter Plot
-=======
-# Calories vs Rating 
-
->>>>>>> Stashed changes
 plt.figure(figsize=(8, 6)) 
 sns.scatterplot(data=df, x='calories', y='rating', hue='type', palette='viridis', s=100) 
 plt.title("Calories vs. Rating of Cereals")
